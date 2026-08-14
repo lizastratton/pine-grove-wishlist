@@ -19,34 +19,31 @@
   <style>
 
     /* =========================================
-       COLORS + GLOBAL SETTINGS
+       COLORS
     ========================================= */
 
     :root {
-      --green: #4d674f;
-      --dark-green: #344838;
-      --deep-green: #293b2e;
+      --green: #3f5d46;
+      --dark-green: #2f4836;
+      --deep-green: #263c2d;
 
       --sage: #dfe7dc;
       --light-sage: #edf2eb;
 
-      --cream: #f7f4ec;
+      --cream: #f7f3ea;
       --warm-white: #fffdf8;
       --white: #ffffff;
 
       --text: #303630;
-      --muted: #697169;
+      --muted: #687168;
 
-      --border: #dde3da;
+      --border: #dce2da;
 
-      --gold: #9a7741;
-      --light-gold: #f2eadb;
+      --gold: #8c672e;
+      --light-gold: #f5ead7;
 
-      --shadow:
-        0 5px 20px rgba(48, 65, 51, 0.07);
-
-      --shadow-hover:
-        0 10px 28px rgba(48, 65, 51, 0.12);
+      --shadow: 0 5px 20px rgba(48, 65, 51, 0.07);
+      --shadow-hover: 0 10px 28px rgba(48, 65, 51, 0.12);
     }
 
 
@@ -76,96 +73,101 @@
 
 
     button,
-    a,
-    input,
-    select,
-    textarea {
+    a {
       font: inherit;
     }
 
 
 
     /* =========================================
-       HEADER / HERO
+       HEADER
     ========================================= */
 
     .hero {
-      background:
-        linear-gradient(
-          180deg,
-          var(--warm-white) 0%,
-          #f3f0e7 100%
-        );
+      background: var(--green);
+      color: var(--white);
 
-      text-align: center;
+      padding: 42px 28px;
+    }
 
-      padding:
-        38px 20px
-        40px;
 
-      border-bottom:
-        1px solid var(--border);
+    .hero-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+
+      gap: 42px;
+    }
+
+
+    .logo-wrap {
+      flex: 0 0 220px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
 
     .logo {
-      width:
-        min(225px, 65vw);
-
-      max-height: 135px;
+      width: 210px;
+      height: 210px;
 
       object-fit: contain;
 
-      margin-bottom: 20px;
+      /*
+        Your uploaded logo has white artwork on black.
+        Screen blending visually removes the black
+        against the green header.
+      */
+      mix-blend-mode: screen;
+    }
+
+
+    .hero-copy {
+      max-width: 780px;
     }
 
 
     .hero h1 {
-      margin:
-        0 0 10px;
+      margin: 0 0 14px;
 
-      color: var(--dark-green);
+      color: var(--white);
 
-      font-size:
-        clamp(30px, 5vw, 46px);
+      font-size: clamp(38px, 5vw, 64px);
 
-      line-height: 1.1;
+      line-height: 1.05;
 
-      letter-spacing:
-        -0.5px;
+      letter-spacing: -1px;
     }
 
 
     .hero p {
-      max-width: 690px;
+      margin: 0;
 
-      margin:
-        0 auto;
+      max-width: 780px;
 
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.94);
 
-      font-size: 16px;
+      font-size: clamp(16px, 2vw, 20px);
+
+      line-height: 1.6;
     }
 
 
 
     /* =========================================
-       PAGE WRAPPER
+       MAIN PAGE
     ========================================= */
 
     .container {
-      width:
-        min(
-          1150px,
-          calc(100% - 32px)
-        );
+      width: min(1180px, calc(100% - 40px));
 
-      margin:
-        0 auto;
+      margin: 0 auto;
 
-      padding:
-        30px 0
-        60px;
+      padding: 38px 0 65px;
     }
 
 
@@ -177,53 +179,50 @@
     .how-it-works {
       background: var(--white);
 
-      border:
-        1px solid var(--border);
+      border: 1px solid var(--border);
 
-      border-radius: 16px;
+      border-radius: 17px;
 
-      padding:
-        20px 22px;
+      padding: 22px 25px;
 
-      margin-bottom: 26px;
+      margin-bottom: 34px;
 
       box-shadow: var(--shadow);
 
       display: flex;
+      align-items: center;
 
-      gap: 14px;
-
-      align-items: flex-start;
+      gap: 18px;
     }
 
 
     .how-icon {
-      background: var(--light-sage);
+      width: 52px;
+      height: 52px;
 
-      color: var(--dark-green);
-
-      width: 38px;
-      height: 38px;
+      flex-shrink: 0;
 
       border-radius: 50%;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
-      flex-shrink: 0;
+      background: var(--light-sage);
 
-      font-size: 18px;
+      color: var(--dark-green);
+
+      font-size: 28px;
+      line-height: 1;
     }
 
 
     .how-it-works p {
       margin: 0;
 
-      color: var(--muted);
+      color: var(--text);
 
-      font-size: 15px;
+      font-size: 16px;
     }
 
 
@@ -234,30 +233,31 @@
 
 
     /* =========================================
-       SECTION HEADING
+       CURRENT NEEDS HEADER
     ========================================= */
 
     .browse-heading {
-      margin-bottom: 15px;
+      margin-bottom: 17px;
     }
 
 
     .browse-heading h2 {
-      margin:
-        0 0 3px;
-
-      font-size: 22px;
+      margin: 0 0 4px;
 
       color: var(--dark-green);
+
+      font-size: 30px;
+
+      line-height: 1.2;
     }
 
 
     .browse-heading p {
       margin: 0;
 
-      font-size: 14px;
-
       color: var(--muted);
+
+      font-size: 15px;
     }
 
 
@@ -268,40 +268,34 @@
 
     .filters {
       display: flex;
-
       flex-wrap: wrap;
 
-      gap: 9px;
+      gap: 10px;
 
-      margin-bottom: 29px;
+      margin-bottom: 28px;
     }
 
 
     .filter-btn {
       appearance: none;
 
-      border:
-        1px solid var(--border);
+      border: 1px solid #cdd6cc;
 
-      background:
-        var(--white);
+      background: var(--warm-white);
 
-      color:
-        var(--dark-green);
+      color: var(--dark-green);
 
-      padding:
-        9px 16px;
+      min-width: 95px;
 
-      border-radius:
-        999px;
+      padding: 10px 18px;
+
+      border-radius: 999px;
 
       cursor: pointer;
 
-      font-size:
-        14px;
+      font-size: 14px;
 
-      font-weight:
-        600;
+      font-weight: 700;
 
       transition:
         background 0.15s ease,
@@ -312,39 +306,31 @@
 
 
     .filter-btn:hover {
-      border-color:
-        var(--green);
+      border-color: var(--green);
 
-      transform:
-        translateY(-1px);
+      transform: translateY(-1px);
     }
 
 
     .filter-btn.active {
-      background:
-        var(--green);
+      background: var(--green);
 
-      color:
-        var(--white);
+      color: var(--white);
 
-      border-color:
-        var(--green);
+      border-color: var(--green);
     }
 
 
 
     /* =========================================
-       WISH LIST GRID
+       GRID
     ========================================= */
 
     .grid {
       display: grid;
 
       grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(280px, 1fr)
-        );
+        repeat(3, minmax(0, 1fr));
 
       gap: 20px;
 
@@ -354,117 +340,85 @@
 
 
     /* =========================================
-       ITEM CARDS
+       CARDS
     ========================================= */
 
     .card {
-      background:
-        var(--white);
+      background: var(--white);
 
-      border:
-        1px solid #e3e7e1;
+      border: 1px solid #e0e5de;
 
-      border-radius:
-        18px;
+      border-radius: 17px;
 
-      padding:
-        23px;
+      padding: 22px;
 
-      box-shadow:
-        var(--shadow);
+      box-shadow: var(--shadow);
 
-      display:
-        flex;
+      display: flex;
+      flex-direction: column;
 
-      flex-direction:
-        column;
-
-      min-height:
-        100%;
+      min-height: 100%;
 
       transition:
-        transform 0.17s ease,
-        box-shadow 0.17s ease;
+        transform 0.16s ease,
+        box-shadow 0.16s ease;
     }
 
 
     .card:hover {
-      transform:
-        translateY(-3px);
+      transform: translateY(-3px);
 
-      box-shadow:
-        var(--shadow-hover);
+      box-shadow: var(--shadow-hover);
     }
 
 
 
     /* =========================================
-       CARD LABELS
+       CARD BADGES
     ========================================= */
 
     .card-labels {
-      display:
-        flex;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
 
-      align-items:
-        center;
+      gap: 7px;
 
-      flex-wrap:
-        wrap;
-
-      gap:
-        7px;
-
-      margin-bottom:
-        13px;
+      margin-bottom: 12px;
     }
 
 
     .classroom {
-      display:
-        inline-block;
+      display: inline-block;
 
-      background:
-        var(--light-sage);
+      width: fit-content;
 
-      color:
-        var(--dark-green);
+      background: var(--light-sage);
 
-      border-radius:
-        999px;
+      color: var(--dark-green);
 
-      padding:
-        5px 10px;
+      border-radius: 999px;
 
-      font-size:
-        12px;
+      padding: 5px 10px;
 
-      font-weight:
-        700;
+      font-size: 12px;
+      font-weight: 700;
     }
 
 
     .priority-badge {
-      display:
-        inline-block;
+      display: inline-block;
 
-      background:
-        var(--light-gold);
+      background: var(--light-gold);
 
-      color:
-        #75582e;
+      color: var(--gold);
 
-      border-radius:
-        999px;
+      border-radius: 999px;
 
-      padding:
-        5px 10px;
+      padding: 5px 10px;
 
-      font-size:
-        12px;
-
-      font-weight:
-        700;
+      font-size: 12px;
+      font-weight: 700;
     }
 
 
@@ -474,77 +428,59 @@
     ========================================= */
 
     .card h2 {
-      margin:
-        0 0 7px;
+      margin: 0 0 8px;
 
-      color:
-        var(--deep-green);
+      color: var(--deep-green);
 
-      font-size:
-        22px;
+      font-size: 23px;
 
-      line-height:
-        1.25;
+      line-height: 1.25;
     }
 
 
     .remaining {
-      color:
-        var(--green);
+      margin-bottom: 13px;
 
-      font-size:
-        16px;
+      color: var(--green);
 
-      font-weight:
-        700;
+      font-size: 16px;
 
-      margin-bottom:
-        14px;
+      font-weight: 700;
     }
 
 
     .remaining.one-left {
-      color:
-        #855e28;
+      color: #79551f;
     }
 
 
     .condition {
-      font-size:
-        14px;
+      margin-bottom: 11px;
 
-      margin-bottom:
-        13px;
+      font-size: 14px;
     }
 
 
     .condition-label {
-      color:
-        var(--muted);
+      color: var(--text);
+
+      font-weight: 700;
     }
 
 
     .condition-value {
-      font-weight:
-        600;
-
-      color:
-        var(--text);
+      color: var(--text);
     }
 
 
     .description {
-      color:
-        var(--muted);
+      color: var(--muted);
 
-      font-size:
-        14px;
+      font-size: 14px;
 
-      margin-bottom:
-        20px;
+      margin-bottom: 20px;
 
-      flex-grow:
-        1;
+      flex-grow: 1;
     }
 
 
@@ -554,47 +490,35 @@
     ========================================= */
 
     .actions {
-      display:
-        flex;
+      display: flex;
+      flex-wrap: wrap;
 
-      flex-wrap:
-        wrap;
+      gap: 9px;
 
-      gap:
-        9px;
-
-      margin-top:
-        auto;
+      margin-top: auto;
     }
 
 
     .button {
-      border:
-        none;
+      border: none;
 
-      border-radius:
-        9px;
+      border-radius: 8px;
 
-      padding:
-        11px 15px;
+      padding: 11px 15px;
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
-      font-size:
-        14px;
+      font-size: 14px;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
-      text-decoration:
-        none;
+      text-decoration: none;
 
-      text-align:
-        center;
+      text-align: center;
 
-      display:
-        inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
       transition:
         transform 0.15s ease,
@@ -603,40 +527,33 @@
 
 
     .button:hover {
-      transform:
-        translateY(-1px);
+      transform: translateY(-1px);
     }
 
 
     .primary {
-      background:
-        var(--green);
+      background: var(--green);
 
-      color:
-        var(--white);
+      color: var(--white);
 
       flex-grow: 1;
     }
 
 
     .primary:hover {
-      background:
-        var(--dark-green);
+      background: var(--dark-green);
     }
 
 
     .secondary {
-      background:
-        var(--light-sage);
+      background: var(--light-sage);
 
-      color:
-        var(--dark-green);
+      color: var(--dark-green);
     }
 
 
     .secondary:hover {
-      background:
-        var(--sage);
+      background: var(--sage);
     }
 
 
@@ -648,26 +565,20 @@
     .loading,
     .empty,
     .error {
-      text-align:
-        center;
+      text-align: center;
 
-      padding:
-        50px 20px;
+      padding: 50px 20px;
 
-      color:
-        var(--muted);
+      color: var(--muted);
     }
 
 
     .empty {
-      background:
-        var(--white);
+      background: var(--white);
 
-      border:
-        1px solid var(--border);
+      border: 1px solid var(--border);
 
-      border-radius:
-        16px;
+      border-radius: 16px;
     }
 
 
@@ -677,29 +588,48 @@
     ========================================= */
 
     footer {
-      text-align:
-        center;
+      background: var(--warm-white);
 
-      padding:
-        30px 20px;
+      border-top: 1px solid var(--border);
 
-      color:
-        var(--muted);
+      text-align: center;
 
-      font-size:
-        13px;
+      padding: 30px 20px;
 
-      border-top:
-        1px solid var(--border);
+      color: var(--muted);
 
-      background:
-        var(--warm-white);
+      font-size: 13px;
     }
 
 
     footer strong {
-      color:
-        var(--dark-green);
+      color: var(--dark-green);
+    }
+
+
+
+    /* =========================================
+       TABLET
+    ========================================= */
+
+    @media (max-width: 900px) {
+
+      .grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+
+      .logo-wrap {
+        flex-basis: 175px;
+      }
+
+
+      .logo {
+        width: 170px;
+        height: 170px;
+      }
+
     }
 
 
@@ -708,126 +638,153 @@
        MOBILE
     ========================================= */
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
 
       .hero {
-        padding:
-          30px 18px
-          32px;
+        padding: 30px 20px;
+      }
+
+
+      .hero-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 19px;
+      }
+
+
+      .logo-wrap {
+        flex: none;
+
+        justify-content: flex-start;
       }
 
 
       .logo {
-        width:
-          min(190px, 70vw);
+        width: 135px;
+        height: 135px;
+      }
 
-        margin-bottom:
-          15px;
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+
+      .hero p {
+        font-size: 16px;
       }
 
 
       .container {
-        width:
-          min(
-            100% - 22px,
-            1150px
-          );
+        width: min(100% - 22px, 1180px);
 
-        padding-top:
-          20px;
+        padding-top: 22px;
       }
 
 
       .how-it-works {
-        padding:
-          17px;
+        padding: 17px;
 
-        gap:
-          11px;
+        align-items: flex-start;
+
+        gap: 12px;
+      }
+
+
+      .how-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 23px;
       }
 
 
       .grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
 
       .card {
-        padding:
-          20px;
-      }
-
-
-      .filters {
-        gap:
-          7px;
+        padding: 20px;
       }
 
 
       .filter-btn {
-        padding:
-          8px 13px;
+        min-width: 0;
 
-        font-size:
-          13px;
+        padding: 8px 13px;
+
+        font-size: 13px;
       }
 
 
       .actions {
-        flex-direction:
-          column;
+        flex-direction: column;
       }
 
 
       .button {
-        width:
-          100%;
+        width: 100%;
       }
 
     }
 
   </style>
-
 </head>
-
 
 
 <body>
 
 
   <!-- ========================================
-       HEADER
+       GREEN HEADER
   ========================================= -->
 
   <header class="hero">
 
-    <img
-      src="pine-grove-logo.png"
-      alt="Pine Grove Montessori School"
-      class="logo"
-    >
+    <div class="hero-inner">
 
-    <h1>
-      Community Wish List
-    </h1>
+      <div class="logo-wrap">
 
-    <p>
-      Browse current classroom and school-wide needs below.
-      New and gently used materials are welcome where noted.
-      Thank you for helping support our learning environments.
-    </p>
+        <img
+          src="pine-grove-logo.png"
+          alt="Pine Grove Montessori School"
+          class="logo"
+        >
+
+      </div>
+
+
+      <div class="hero-copy">
+
+        <h1>
+          Community Wish List
+        </h1>
+
+        <p>
+          Browse current classroom and school-wide needs below.
+          New and gently used materials are welcome where noted.
+          Thank you for helping support our learning environments.
+        </p>
+
+      </div>
+
+    </div>
 
   </header>
 
 
 
   <!-- ========================================
-       MAIN PAGE
+       MAIN CONTENT
   ========================================= -->
 
   <main class="container">
 
+
+    <!-- HOW IT WORKS -->
 
     <div class="how-it-works">
 
@@ -848,6 +805,8 @@
 
 
 
+    <!-- CURRENT NEEDS -->
+
     <div class="browse-heading">
 
       <h2>
@@ -862,12 +821,16 @@
 
 
 
+    <!-- FILTER BUTTONS -->
+
     <div
       id="filters"
       class="filters"
     ></div>
 
 
+
+    <!-- LOADING -->
 
     <div
       id="loading"
@@ -877,6 +840,8 @@
     </div>
 
 
+
+    <!-- ERROR -->
 
     <div
       id="error"
@@ -889,12 +854,16 @@
 
 
 
+    <!-- ITEM CARDS -->
+
     <div
       id="grid"
       class="grid"
     ></div>
 
 
+
+    <!-- EMPTY FILTER -->
 
     <div
       id="empty"
@@ -929,13 +898,13 @@
 
 
   <!-- ========================================
-       JAVASCRIPT
+       WORKING WISH LIST JAVASCRIPT
   ========================================= -->
 
   <script>
 
     /*
-      GOOGLE SHEET CSV
+      PUBLISHED MASTER WISH LIST
     */
 
     const CSV_URL =
@@ -943,7 +912,7 @@
 
 
     /*
-      GOOGLE DONATION FORM
+      FAMILY DONATION FORM
     */
 
     const FORM_BASE_URL =
@@ -951,7 +920,7 @@
 
 
     /*
-      GOOGLE FORM PREFILL FIELD IDS
+      PREFILL FIELD IDS
     */
 
     const ITEM_ENTRY =
@@ -977,16 +946,15 @@
       START PAGE
     */
 
-    document
-      .addEventListener(
-        'DOMContentLoaded',
-        loadData
-      );
+    document.addEventListener(
+      'DOMContentLoaded',
+      loadData
+    );
 
 
 
     /*
-      LOAD GOOGLE SHEET
+      LOAD GOOGLE SHEET DATA
     */
 
     async function loadData() {
@@ -997,8 +965,7 @@
           await fetch(
             CSV_URL,
             {
-              cache:
-                'no-store'
+              cache: 'no-store'
             }
           );
 
@@ -1021,11 +988,8 @@
 
 
         document
-          .getElementById(
-            'loading'
-          )
-          .style
-          .display =
+          .getElementById('loading')
+          .style.display =
           'none';
 
 
@@ -1040,20 +1004,14 @@
 
 
         document
-          .getElementById(
-            'loading'
-          )
-          .style
-          .display =
+          .getElementById('loading')
+          .style.display =
           'none';
 
 
         document
-          .getElementById(
-            'error'
-          )
-          .style
-          .display =
+          .getElementById('error')
+          .style.display =
           'block';
 
       }
@@ -1063,7 +1021,7 @@
 
 
     /*
-      TURN CSV INTO OBJECTS
+      TURN CSV INTO ITEMS
     */
 
     function parseCSV(csv) {
@@ -1072,9 +1030,7 @@
         parseCSVRows(csv);
 
 
-      if (
-        rows.length < 2
-      ) {
+      if (rows.length < 2) {
 
         return [];
 
@@ -1095,193 +1051,118 @@
 
 
       const itemIndex =
-        getIndex(
-          'Item'
-        );
+        getIndex('Item');
 
 
       const classroomIndex =
-        getIndex(
-          'Classroom'
-        );
+        getIndex('Classroom');
 
 
       const neededIndex =
-        getIndex(
-          'Quantity Needed'
-        );
+        getIndex('Quantity Needed');
 
 
       const claimedIndex =
-        getIndex(
-          'Quantity Claimed'
-        );
+        getIndex('Quantity Claimed');
 
 
       const remainingIndex =
-        getIndex(
-          'Still Needed'
-        );
+        getIndex('Still Needed');
 
 
       const conditionIndex =
-        getIndex(
-          'Condition'
-        );
+        getIndex('Condition');
 
 
       const priorityIndex =
-        getIndex(
-          'Priority'
-        );
+        getIndex('Priority');
 
 
       const descriptionIndex =
-        getIndex(
-          'Description'
-        );
+        getIndex('Description');
 
 
       const exampleLinkIndex =
-        getIndex(
-          'Example Link'
+        getIndex('Example Link');
+
+
+      return rows
+
+        .slice(1)
+
+        .map(
+          row => ({
+
+            item:
+              row[itemIndex]
+                ?.trim()
+              || '',
+
+
+            classroom:
+              row[classroomIndex]
+                ?.trim()
+              || '',
+
+
+            quantityNeeded:
+              Number(
+                row[neededIndex]
+              )
+              || 0,
+
+
+            quantityClaimed:
+              Number(
+                row[claimedIndex]
+              )
+              || 0,
+
+
+            stillNeeded:
+              Number(
+                row[remainingIndex]
+              )
+              || 0,
+
+
+            condition:
+              row[conditionIndex]
+                ?.trim()
+              || '',
+
+
+            priority:
+              row[priorityIndex]
+                ?.trim()
+              || '',
+
+
+            description:
+              row[descriptionIndex]
+                ?.trim()
+              || '',
+
+
+            exampleLink:
+              row[exampleLinkIndex]
+                ?.trim()
+              || ''
+
+          })
+        )
+
+        /*
+          Automatically hide anything
+          that has been fully claimed.
+        */
+
+        .filter(
+          item =>
+            item.item
+            &&
+            item.stillNeeded > 0
         );
-
-
-
-      const items =
-        rows
-          .slice(1)
-          .map(
-            row => ({
-
-              item:
-                row[itemIndex]
-                  ?.trim()
-                || '',
-
-
-              classroom:
-                row[classroomIndex]
-                  ?.trim()
-                || '',
-
-
-              quantityNeeded:
-                Number(
-                  row[neededIndex]
-                ) || 0,
-
-
-              quantityClaimed:
-                Number(
-                  row[claimedIndex]
-                ) || 0,
-
-
-              stillNeeded:
-                Number(
-                  row[remainingIndex]
-                ) || 0,
-
-
-              condition:
-                row[conditionIndex]
-                  ?.trim()
-                || '',
-
-
-              priority:
-                row[priorityIndex]
-                  ?.trim()
-                || '',
-
-
-              description:
-                row[descriptionIndex]
-                  ?.trim()
-                || '',
-
-
-              exampleLink:
-                row[exampleLinkIndex]
-                  ?.trim()
-                || ''
-
-            })
-          )
-
-
-          /*
-            Do not show fulfilled items.
-          */
-
-          .filter(
-            item =>
-              item.item
-              &&
-              item.stillNeeded > 0
-          );
-
-
-
-      /*
-        SORT HIGH PRIORITY FIRST
-      */
-
-      const priorityOrder = {
-
-        High: 1,
-
-        Medium: 2,
-
-        Low: 3
-
-      };
-
-
-      items.sort(
-        (a, b) => {
-
-          const priorityDifference =
-
-            (
-              priorityOrder[
-                a.priority
-              ]
-              || 99
-            )
-
-            -
-
-            (
-              priorityOrder[
-                b.priority
-              ]
-              || 99
-            );
-
-
-          if (
-            priorityDifference
-            !== 0
-          ) {
-
-            return priorityDifference;
-
-          }
-
-
-          return a.item
-            .localeCompare(
-              b.item
-            );
-
-        }
-      );
-
-
-      return items;
 
     }
 
@@ -1411,7 +1292,7 @@
 
 
     /*
-      BUILD CLASSROOM FILTER BUTTONS
+      CREATE CLASSROOM FILTERS
     */
 
     function buildFilters() {
@@ -1472,6 +1353,11 @@
         );
 
 
+      /*
+        Include any future classrooms
+        not listed above.
+      */
+
       Array
         .from(
           existingClassrooms
@@ -1489,10 +1375,9 @@
 
         .forEach(
           classroom =>
-            classrooms
-              .push(
-                classroom
-              )
+            classrooms.push(
+              classroom
+            )
         );
 
 
@@ -1503,6 +1388,7 @@
       classrooms
         .forEach(
           classroom => {
+
 
             const button =
               document
@@ -1540,6 +1426,7 @@
             button.onclick =
               () => {
 
+
                 activeClassroom =
                   classroom;
 
@@ -1564,7 +1451,7 @@
 
 
     /*
-      DISPLAY ITEM CARDS
+      DISPLAY CARDS
     */
 
     function renderItems() {
@@ -1643,7 +1530,7 @@
 
 
             /*
-              LABEL ROW
+              BADGES
             */
 
             const labels =
@@ -1659,7 +1546,7 @@
 
 
             /*
-              CLASSROOM LABEL
+              CLASSROOM
             */
 
             const classroom =
@@ -1686,7 +1573,8 @@
 
 
             /*
-              HIGH PRIORITY LABEL
+              MOST NEEDED BADGE
+              Only shown for HIGH priority.
             */
 
             if (
@@ -1707,7 +1595,7 @@
 
 
               priorityBadge.textContent =
-                'Most Needed';
+                '☆ Most Needed';
 
 
               labels
@@ -1720,7 +1608,7 @@
 
 
             /*
-              TITLE
+              ITEM NAME
             */
 
             const title =
@@ -1736,7 +1624,7 @@
 
 
             /*
-              REMAINING QUANTITY
+              STILL NEEDED
             */
 
             const remaining =
@@ -1763,7 +1651,7 @@
 
 
               remaining.textContent =
-                'Just 1 still needed!';
+                '1 still needed!';
 
             }
 
@@ -1795,46 +1683,46 @@
               item.condition
             ) {
 
-              const label =
+              const conditionLabel =
                 document
                   .createElement(
                     'span'
                   );
 
 
-              label.className =
+              conditionLabel.className =
                 'condition-label';
 
 
-              label.textContent =
+              conditionLabel.textContent =
                 'Condition: ';
 
 
 
-              const value =
+              const conditionValue =
                 document
                   .createElement(
                     'span'
                   );
 
 
-              value.className =
+              conditionValue.className =
                 'condition-value';
 
 
-              value.textContent =
+              conditionValue.textContent =
                 item.condition;
 
 
               condition
                 .appendChild(
-                  label
+                  conditionLabel
                 );
 
 
               condition
                 .appendChild(
-                  value
+                  conditionValue
                 );
 
             }
@@ -1879,7 +1767,7 @@
 
 
             /*
-              EXAMPLE LINK
+              VIEW EXAMPLE
             */
 
             if (
@@ -1910,7 +1798,7 @@
 
 
               example.textContent =
-                'View Example';
+                'View Example ↗';
 
 
               actions
@@ -1923,7 +1811,7 @@
 
 
             /*
-              CLAIM BUTTON
+              CLAIM ITEM
             */
 
             const claim =
@@ -1963,7 +1851,7 @@
 
 
             /*
-              ASSEMBLE CARD
+              BUILD CARD
             */
 
             card
@@ -2021,7 +1909,7 @@
 
 
     /*
-      BUILD PREFILLED GOOGLE FORM LINK
+      GOOGLE FORM PREFILL LINK
     */
 
     function buildPrefilledFormURL(
