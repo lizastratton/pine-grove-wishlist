@@ -1,522 +1,2066 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Pine Grove Montessori School Community Wish List"
+  >
+
   <title>Pine Grove Community Wish List</title>
 
   <style>
+
+    /* =========================================
+       COLORS + GLOBAL SETTINGS
+    ========================================= */
+
     :root {
-      --green: #445d48;
-      --dark-green: #304335;
-      --light-green: #e8eee7;
+      --green: #4d674f;
+      --dark-green: #344838;
+      --deep-green: #293b2e;
+
+      --sage: #dfe7dc;
+      --light-sage: #edf2eb;
+
       --cream: #f7f4ec;
+      --warm-white: #fffdf8;
       --white: #ffffff;
-      --text: #2f332f;
-      --muted: #6c746c;
-      --border: #d9ded7;
-      --shadow: 0 5px 20px rgba(44, 60, 47, 0.08);
+
+      --text: #303630;
+      --muted: #697169;
+
+      --border: #dde3da;
+
+      --gold: #9a7741;
+      --light-gold: #f2eadb;
+
+      --shadow:
+        0 5px 20px rgba(48, 65, 51, 0.07);
+
+      --shadow-hover:
+        0 10px 28px rgba(48, 65, 51, 0.12);
     }
+
 
     * {
       box-sizing: border-box;
     }
 
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       color: var(--text);
-      line-height: 1.5;
+      background: var(--cream);
+
+      line-height: 1.55;
     }
+
+
+    button,
+    a,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+
+
+    /* =========================================
+       HEADER / HERO
+    ========================================= */
 
     .hero {
-      background: var(--green);
-      color: white;
-      padding: 48px 20px 42px;
+      background:
+        linear-gradient(
+          180deg,
+          var(--warm-white) 0%,
+          #f3f0e7 100%
+        );
+
       text-align: center;
+
+      padding:
+        38px 20px
+        40px;
+
+      border-bottom:
+        1px solid var(--border);
     }
+
+
+    .logo {
+      width:
+        min(225px, 65vw);
+
+      max-height: 135px;
+
+      object-fit: contain;
+
+      margin-bottom: 20px;
+    }
+
 
     .hero h1 {
-      margin: 0 0 12px;
-      font-size: clamp(30px, 5vw, 48px);
+      margin:
+        0 0 10px;
+
+      color: var(--dark-green);
+
+      font-size:
+        clamp(30px, 5vw, 46px);
+
       line-height: 1.1;
+
+      letter-spacing:
+        -0.5px;
     }
+
 
     .hero p {
-      max-width: 720px;
-      margin: 0 auto;
-      font-size: 17px;
-      opacity: 0.95;
+      max-width: 690px;
+
+      margin:
+        0 auto;
+
+      color: var(--muted);
+
+      font-size: 16px;
     }
+
+
+
+    /* =========================================
+       PAGE WRAPPER
+    ========================================= */
 
     .container {
-      width: min(1150px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 30px 0 60px;
+      width:
+        min(
+          1150px,
+          calc(100% - 32px)
+        );
+
+      margin:
+        0 auto;
+
+      padding:
+        30px 0
+        60px;
     }
 
-    .intro {
+
+
+    /* =========================================
+       HOW IT WORKS
+    ========================================= */
+
+    .how-it-works {
       background: var(--white);
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin-bottom: 25px;
-      box-shadow: var(--shadow);
-    }
 
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
+      border:
+        1px solid var(--border);
 
-    .filter-btn {
-      border: 1px solid var(--border);
-      background: var(--white);
-      padding: 10px 17px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--dark-green);
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--white);
       border-radius: 16px;
-      padding: 22px;
+
+      padding:
+        20px 22px;
+
+      margin-bottom: 26px;
+
       box-shadow: var(--shadow);
-      border: 1px solid rgba(217, 222, 215, 0.8);
+
       display: flex;
-      flex-direction: column;
+
+      gap: 14px;
+
+      align-items: flex-start;
     }
 
-    .classroom {
-      display: inline-block;
-      width: fit-content;
-      background: var(--light-green);
+
+    .how-icon {
+      background: var(--light-sage);
+
       color: var(--dark-green);
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 13px;
+
+      width: 38px;
+      height: 38px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      font-size: 18px;
     }
 
-    .card h2 {
-      margin: 0 0 8px;
-      font-size: 22px;
+
+    .how-it-works p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 15px;
+    }
+
+
+    .how-it-works strong {
       color: var(--dark-green);
     }
 
-    .remaining {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
 
-    .details {
-      font-size: 14px;
+
+    /* =========================================
+       SECTION HEADING
+    ========================================= */
+
+    .browse-heading {
       margin-bottom: 15px;
     }
 
-    .details div {
-      margin-bottom: 5px;
+
+    .browse-heading h2 {
+      margin:
+        0 0 3px;
+
+      font-size: 22px;
+
+      color: var(--dark-green);
     }
 
-    .description {
+
+    .browse-heading p {
+      margin: 0;
+
+      font-size: 14px;
+
       color: var(--muted);
-      margin-bottom: 18px;
+    }
+
+
+
+    /* =========================================
+       CLASSROOM FILTERS
+    ========================================= */
+
+    .filters {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+
+      margin-bottom: 29px;
+    }
+
+
+    .filter-btn {
+      appearance: none;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        var(--white);
+
+      color:
+        var(--dark-green);
+
+      padding:
+        9px 16px;
+
+      border-radius:
+        999px;
+
+      cursor: pointer;
+
+      font-size:
+        14px;
+
+      font-weight:
+        600;
+
+      transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+    }
+
+
+    .filter-btn:hover {
+      border-color:
+        var(--green);
+
+      transform:
+        translateY(-1px);
+    }
+
+
+    .filter-btn.active {
+      background:
+        var(--green);
+
+      color:
+        var(--white);
+
+      border-color:
+        var(--green);
+    }
+
+
+
+    /* =========================================
+       WISH LIST GRID
+    ========================================= */
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(280px, 1fr)
+        );
+
+      gap: 20px;
+
+      align-items: stretch;
+    }
+
+
+
+    /* =========================================
+       ITEM CARDS
+    ========================================= */
+
+    .card {
+      background:
+        var(--white);
+
+      border:
+        1px solid #e3e7e1;
+
+      border-radius:
+        18px;
+
+      padding:
+        23px;
+
+      box-shadow:
+        var(--shadow);
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      min-height:
+        100%;
+
+      transition:
+        transform 0.17s ease,
+        box-shadow 0.17s ease;
+    }
+
+
+    .card:hover {
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        var(--shadow-hover);
+    }
+
+
+
+    /* =========================================
+       CARD LABELS
+    ========================================= */
+
+    .card-labels {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        7px;
+
+      margin-bottom:
+        13px;
+    }
+
+
+    .classroom {
+      display:
+        inline-block;
+
+      background:
+        var(--light-sage);
+
+      color:
+        var(--dark-green);
+
+      border-radius:
+        999px;
+
+      padding:
+        5px 10px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+    }
+
+
+    .priority-badge {
+      display:
+        inline-block;
+
+      background:
+        var(--light-gold);
+
+      color:
+        #75582e;
+
+      border-radius:
+        999px;
+
+      padding:
+        5px 10px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+    }
+
+
+
+    /* =========================================
+       CARD CONTENT
+    ========================================= */
+
+    .card h2 {
+      margin:
+        0 0 7px;
+
+      color:
+        var(--deep-green);
+
+      font-size:
+        22px;
+
+      line-height:
+        1.25;
+    }
+
+
+    .remaining {
+      color:
+        var(--green);
+
+      font-size:
+        16px;
+
+      font-weight:
+        700;
+
+      margin-bottom:
+        14px;
+    }
+
+
+    .remaining.one-left {
+      color:
+        #855e28;
+    }
+
+
+    .condition {
+      font-size:
+        14px;
+
+      margin-bottom:
+        13px;
+    }
+
+
+    .condition-label {
+      color:
+        var(--muted);
+    }
+
+
+    .condition-value {
+      font-weight:
+        600;
+
+      color:
+        var(--text);
+    }
+
+
+    .description {
+      color:
+        var(--muted);
+
+      font-size:
+        14px;
+
+      margin-bottom:
+        20px;
+
+      flex-grow:
+        1;
+    }
+
+
+
+    /* =========================================
+       CARD BUTTONS
+    ========================================= */
+
+    .actions {
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        9px;
+
+      margin-top:
+        auto;
+    }
+
+
+    .button {
+      border:
+        none;
+
+      border-radius:
+        9px;
+
+      padding:
+        11px 15px;
+
+      cursor:
+        pointer;
+
+      font-size:
+        14px;
+
+      font-weight:
+        700;
+
+      text-decoration:
+        none;
+
+      text-align:
+        center;
+
+      display:
+        inline-block;
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+    }
+
+
+    .button:hover {
+      transform:
+        translateY(-1px);
+    }
+
+
+    .primary {
+      background:
+        var(--green);
+
+      color:
+        var(--white);
+
       flex-grow: 1;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: auto;
-    }
-
-    .button {
-      border: none;
-      border-radius: 8px;
-      padding: 11px 15px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-    }
-
-    .primary {
-      background: var(--green);
-      color: white;
-    }
 
     .primary:hover {
-      background: var(--dark-green);
+      background:
+        var(--dark-green);
     }
 
+
     .secondary {
-      background: var(--light-green);
-      color: var(--dark-green);
+      background:
+        var(--light-sage);
+
+      color:
+        var(--dark-green);
     }
+
+
+    .secondary:hover {
+      background:
+        var(--sage);
+    }
+
+
+
+    /* =========================================
+       LOADING / EMPTY / ERROR
+    ========================================= */
 
     .loading,
     .empty,
     .error {
-      text-align: center;
-      padding: 45px 20px;
-      color: var(--muted);
+      text-align:
+        center;
+
+      padding:
+        50px 20px;
+
+      color:
+        var(--muted);
     }
+
+
+    .empty {
+      background:
+        var(--white);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        16px;
+    }
+
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      text-align:
+        center;
+
+      padding:
+        30px 20px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        13px;
+
+      border-top:
+        1px solid var(--border);
+
+      background:
+        var(--warm-white);
+    }
+
+
+    footer strong {
+      color:
+        var(--dark-green);
+    }
+
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
 
     @media (max-width: 600px) {
+
       .hero {
-        padding: 38px 18px 34px;
+        padding:
+          30px 18px
+          32px;
       }
+
+
+      .logo {
+        width:
+          min(190px, 70vw);
+
+        margin-bottom:
+          15px;
+      }
+
 
       .container {
-        width: min(100% - 22px, 1150px);
-        padding-top: 20px;
+        width:
+          min(
+            100% - 22px,
+            1150px
+          );
+
+        padding-top:
+          20px;
       }
+
+
+      .how-it-works {
+        padding:
+          17px;
+
+        gap:
+          11px;
+      }
+
 
       .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
+
 
       .card {
-        padding: 19px;
+        padding:
+          20px;
       }
 
-      .filter-btn {
-        padding: 9px 13px;
+
+      .filters {
+        gap:
+          7px;
       }
+
+
+      .filter-btn {
+        padding:
+          8px 13px;
+
+        font-size:
+          13px;
+      }
+
+
+      .actions {
+        flex-direction:
+          column;
+      }
+
+
+      .button {
+        width:
+          100%;
+      }
+
     }
+
   </style>
+
 </head>
+
+
 
 <body>
 
+
+  <!-- ========================================
+       HEADER
+  ========================================= -->
+
   <header class="hero">
-    <h1>Pine Grove Community Wish List</h1>
+
+    <img
+      src="pine-grove-logo.png"
+      alt="Pine Grove Montessori School"
+      class="logo"
+    >
+
+    <h1>
+      Community Wish List
+    </h1>
+
     <p>
-      Help our classrooms grow! Browse the items currently needed by our
-      classrooms and school community. New and secondhand items are welcome
-      where noted.
+      Browse current classroom and school-wide needs below.
+      New and gently used materials are welcome where noted.
+      Thank you for helping support our learning environments.
     </p>
+
   </header>
+
+
+
+  <!-- ========================================
+       MAIN PAGE
+  ========================================= -->
 
   <main class="container">
 
-    <div class="intro">
-      Browse the current wish list below. When you find something you'd like
-      to provide, click <strong>I'll Provide This</strong>. The donation form
-      will already know which item and classroom you selected.
+
+    <div class="how-it-works">
+
+      <div class="how-icon">
+        ♡
+      </div>
+
+      <p>
+        <strong>How it works:</strong>
+        Find an item you'd like to provide and click
+        <strong>I'll Provide This</strong>.
+        A short form will open with the item already selected.
+        Once submitted, our wish list automatically updates
+        the quantity still needed.
+      </p>
+
     </div>
 
-    <div id="filters" class="filters"></div>
 
-    <div id="loading" class="loading">
+
+    <div class="browse-heading">
+
+      <h2>
+        Current Needs
+      </h2>
+
+      <p>
+        Browse everything or select a classroom.
+      </p>
+
+    </div>
+
+
+
+    <div
+      id="filters"
+      class="filters"
+    ></div>
+
+
+
+    <div
+      id="loading"
+      class="loading"
+    >
       Loading current wish list…
     </div>
 
-    <div id="error" class="error" style="display:none;">
-      We couldn't load the wish list right now. Please try again later.
+
+
+    <div
+      id="error"
+      class="error"
+      style="display:none;"
+    >
+      We couldn't load the wish list right now.
+      Please try again later.
     </div>
 
-    <div id="grid" class="grid"></div>
 
-    <div id="empty" class="empty" style="display:none;">
-      There are no items currently needed in this section.
+
+    <div
+      id="grid"
+      class="grid"
+    ></div>
+
+
+
+    <div
+      id="empty"
+      class="empty"
+      style="display:none;"
+    >
+      Nothing is currently needed in this section.
+      Thank you for checking!
     </div>
+
 
   </main>
 
-<script>
-  const CSV_URL =
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vSIk4pDlW0XWGQ0JqzhIIN7OfgG9eZGNgoLXO05_foTqk61DgUO8oFzNy8oUMtjAOhpSRoL9QOW-oK3/pub?gid=0&single=true&output=csv';
 
-  const FORM_BASE_URL =
-    'https://docs.google.com/forms/d/e/1FAIpQLSfbeHijemdWr1crlZs_RoXmtw7FQwa0nanemzii2LcDYx9qZA/viewform';
 
-  const ITEM_ENTRY = '157983084';
-  const CLASSROOM_ENTRY = '2029326565';
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
 
-  let allItems = [];
-  let activeClassroom = 'All';
+  <footer>
 
-  document.addEventListener('DOMContentLoaded', loadData);
+    <strong>
+      Pine Grove Montessori School
+    </strong>
 
-  async function loadData() {
-    try {
-      const response = await fetch(CSV_URL, { cache: 'no-store' });
+    <br>
 
-      if (!response.ok) {
-        throw new Error('CSV request failed');
-      }
+    Thank you for helping our classrooms grow.
 
-      const csv = await response.text();
-      allItems = parseCSV(csv);
+  </footer>
 
-      document.getElementById('loading').style.display = 'none';
 
-      buildFilters();
-      renderItems();
 
-    } catch (error) {
-      console.error(error);
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('error').style.display = 'block';
-    }
-  }
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
 
-  function parseCSV(csv) {
-    const rows = parseCSVRows(csv);
+  <script>
 
-    if (rows.length < 2) return [];
+    /*
+      GOOGLE SHEET CSV
+    */
 
-    const headers = rows[0].map(header => header.trim());
+    const CSV_URL =
+      'https://docs.google.com/spreadsheets/d/e/2PACX-1vSIk4pDlW0XWGQ0JqzhIIN7OfgG9eZGNgoLXO05_foTqk61DgUO8oFzNy8oUMtjAOhpSRoL9QOW-oK3/pub?gid=0&single=true&output=csv';
 
-    const getIndex = name => headers.indexOf(name);
 
-    const itemIndex = getIndex('Item');
-    const classroomIndex = getIndex('Classroom');
-    const neededIndex = getIndex('Quantity Needed');
-    const claimedIndex = getIndex('Quantity Claimed');
-    const remainingIndex = getIndex('Still Needed');
-    const conditionIndex = getIndex('Condition');
-    const priorityIndex = getIndex('Priority');
-    const descriptionIndex = getIndex('Description');
-    const exampleLinkIndex = getIndex('Example Link');
+    /*
+      GOOGLE DONATION FORM
+    */
 
-    return rows
-      .slice(1)
-      .map(row => ({
-        item: row[itemIndex]?.trim() || '',
-        classroom: row[classroomIndex]?.trim() || '',
-        quantityNeeded: Number(row[neededIndex]) || 0,
-        quantityClaimed: Number(row[claimedIndex]) || 0,
-        stillNeeded: Number(row[remainingIndex]) || 0,
-        condition: row[conditionIndex]?.trim() || '',
-        priority: row[priorityIndex]?.trim() || '',
-        description: row[descriptionIndex]?.trim() || '',
-        exampleLink: row[exampleLinkIndex]?.trim() || ''
-      }))
-      .filter(item => item.item && item.stillNeeded > 0);
-  }
+    const FORM_BASE_URL =
+      'https://docs.google.com/forms/d/e/1FAIpQLSfbeHijemdWr1crlZs_RoXmtw7FQwa0nanemzii2LcDYx9qZA/viewform';
 
-  function parseCSVRows(text) {
-    const rows = [];
-    let row = [];
-    let field = '';
-    let insideQuotes = false;
 
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      const next = text[i + 1];
+    /*
+      GOOGLE FORM PREFILL FIELD IDS
+    */
 
-      if (char === '"' && insideQuotes && next === '"') {
-        field += '"';
-        i++;
-      } else if (char === '"') {
-        insideQuotes = !insideQuotes;
-      } else if (char === ',' && !insideQuotes) {
-        row.push(field);
-        field = '';
-      } else if ((char === '\n' || char === '\r') && !insideQuotes) {
-        if (char === '\r' && next === '\n') i++;
-        row.push(field);
-        rows.push(row);
-        row = [];
-        field = '';
-      } else {
-        field += char;
-      }
-    }
+    const ITEM_ENTRY =
+      '157983084';
 
-    if (field.length || row.length) {
-      row.push(field);
-      rows.push(row);
-    }
+    const CLASSROOM_ENTRY =
+      '2029326565';
 
-    return rows;
-  }
 
-  function buildFilters() {
-    const container = document.getElementById('filters');
 
-    const preferredOrder = [
-      'All',
-      'Whole School',
-      'Seedlings',
-      'Birch',
-      'Maple',
-      'Spruce'
-    ];
+    /*
+      PAGE DATA
+    */
 
-    const existingClassrooms = new Set(
-      allItems
-        .map(item => item.classroom)
-        .filter(Boolean)
-    );
+    let allItems = [];
 
-    const classrooms = preferredOrder.filter(
-      classroom =>
-        classroom === 'All' || existingClassrooms.has(classroom)
-    );
+    let activeClassroom =
+      'All';
 
-    Array.from(existingClassrooms)
-      .filter(classroom => !preferredOrder.includes(classroom))
-      .sort()
-      .forEach(classroom => classrooms.push(classroom));
 
-    container.innerHTML = '';
 
-    classrooms.forEach(classroom => {
-      const button = document.createElement('button');
+    /*
+      START PAGE
+    */
 
-      button.className =
-        'filter-btn' +
-        (classroom === activeClassroom ? ' active' : '');
+    document
+      .addEventListener(
+        'DOMContentLoaded',
+        loadData
+      );
 
-      button.textContent =
-        classroom === 'All' ? 'All' : classroom;
 
-      button.onclick = () => {
-        activeClassroom = classroom;
-        buildFilters();
-        renderItems();
-      };
 
-      container.appendChild(button);
-    });
-  }
+    /*
+      LOAD GOOGLE SHEET
+    */
 
-  function renderItems() {
-    const grid = document.getElementById('grid');
-    const empty = document.getElementById('empty');
+    async function loadData() {
 
-    const visibleItems =
-      activeClassroom === 'All'
-        ? allItems
-        : allItems.filter(
-            item => item.classroom === activeClassroom
+      try {
+
+        const response =
+          await fetch(
+            CSV_URL,
+            {
+              cache:
+                'no-store'
+            }
           );
 
-    grid.innerHTML = '';
 
-    if (!visibleItems.length) {
-      empty.style.display = 'block';
-      return;
+        if (!response.ok) {
+
+          throw new Error(
+            'CSV request failed'
+          );
+
+        }
+
+
+        const csv =
+          await response.text();
+
+
+        allItems =
+          parseCSV(csv);
+
+
+        document
+          .getElementById(
+            'loading'
+          )
+          .style
+          .display =
+          'none';
+
+
+        buildFilters();
+
+        renderItems();
+
+
+      } catch (error) {
+
+        console.error(error);
+
+
+        document
+          .getElementById(
+            'loading'
+          )
+          .style
+          .display =
+          'none';
+
+
+        document
+          .getElementById(
+            'error'
+          )
+          .style
+          .display =
+          'block';
+
+      }
+
     }
 
-    empty.style.display = 'none';
 
-    visibleItems.forEach(item => {
-      const card = document.createElement('article');
-      card.className = 'card';
 
-      const classroom = document.createElement('div');
-      classroom.className = 'classroom';
-      classroom.textContent =
-        item.classroom || 'Whole School';
+    /*
+      TURN CSV INTO OBJECTS
+    */
 
-      const title = document.createElement('h2');
-      title.textContent = item.item;
+    function parseCSV(csv) {
 
-      const remaining = document.createElement('div');
-      remaining.className = 'remaining';
-      remaining.textContent =
-        item.stillNeeded === 1
-          ? '1 still needed'
-          : `${item.stillNeeded} still needed`;
+      const rows =
+        parseCSVRows(csv);
 
-      const details = document.createElement('div');
-      details.className = 'details';
 
-      if (item.condition) {
-        const condition = document.createElement('div');
-        condition.textContent =
-          `Condition: ${item.condition}`;
-        details.appendChild(condition);
+      if (
+        rows.length < 2
+      ) {
+
+        return [];
+
       }
 
-      if (item.priority) {
-        const priority = document.createElement('div');
-        priority.textContent =
-          `Priority: ${item.priority}`;
-        details.appendChild(priority);
+
+      const headers =
+        rows[0]
+          .map(
+            header =>
+              header.trim()
+          );
+
+
+      const getIndex =
+        name =>
+          headers.indexOf(name);
+
+
+      const itemIndex =
+        getIndex(
+          'Item'
+        );
+
+
+      const classroomIndex =
+        getIndex(
+          'Classroom'
+        );
+
+
+      const neededIndex =
+        getIndex(
+          'Quantity Needed'
+        );
+
+
+      const claimedIndex =
+        getIndex(
+          'Quantity Claimed'
+        );
+
+
+      const remainingIndex =
+        getIndex(
+          'Still Needed'
+        );
+
+
+      const conditionIndex =
+        getIndex(
+          'Condition'
+        );
+
+
+      const priorityIndex =
+        getIndex(
+          'Priority'
+        );
+
+
+      const descriptionIndex =
+        getIndex(
+          'Description'
+        );
+
+
+      const exampleLinkIndex =
+        getIndex(
+          'Example Link'
+        );
+
+
+
+      const items =
+        rows
+          .slice(1)
+          .map(
+            row => ({
+
+              item:
+                row[itemIndex]
+                  ?.trim()
+                || '',
+
+
+              classroom:
+                row[classroomIndex]
+                  ?.trim()
+                || '',
+
+
+              quantityNeeded:
+                Number(
+                  row[neededIndex]
+                ) || 0,
+
+
+              quantityClaimed:
+                Number(
+                  row[claimedIndex]
+                ) || 0,
+
+
+              stillNeeded:
+                Number(
+                  row[remainingIndex]
+                ) || 0,
+
+
+              condition:
+                row[conditionIndex]
+                  ?.trim()
+                || '',
+
+
+              priority:
+                row[priorityIndex]
+                  ?.trim()
+                || '',
+
+
+              description:
+                row[descriptionIndex]
+                  ?.trim()
+                || '',
+
+
+              exampleLink:
+                row[exampleLinkIndex]
+                  ?.trim()
+                || ''
+
+            })
+          )
+
+
+          /*
+            Do not show fulfilled items.
+          */
+
+          .filter(
+            item =>
+              item.item
+              &&
+              item.stillNeeded > 0
+          );
+
+
+
+      /*
+        SORT HIGH PRIORITY FIRST
+      */
+
+      const priorityOrder = {
+
+        High: 1,
+
+        Medium: 2,
+
+        Low: 3
+
+      };
+
+
+      items.sort(
+        (a, b) => {
+
+          const priorityDifference =
+
+            (
+              priorityOrder[
+                a.priority
+              ]
+              || 99
+            )
+
+            -
+
+            (
+              priorityOrder[
+                b.priority
+              ]
+              || 99
+            );
+
+
+          if (
+            priorityDifference
+            !== 0
+          ) {
+
+            return priorityDifference;
+
+          }
+
+
+          return a.item
+            .localeCompare(
+              b.item
+            );
+
+        }
+      );
+
+
+      return items;
+
+    }
+
+
+
+    /*
+      CSV PARSER
+    */
+
+    function parseCSVRows(text) {
+
+      const rows = [];
+
+      let row = [];
+
+      let field = '';
+
+      let insideQuotes = false;
+
+
+      for (
+        let i = 0;
+        i < text.length;
+        i++
+      ) {
+
+        const char =
+          text[i];
+
+
+        const next =
+          text[i + 1];
+
+
+        if (
+          char === '"'
+          &&
+          insideQuotes
+          &&
+          next === '"'
+        ) {
+
+          field += '"';
+
+          i++;
+
+        }
+
+        else if (
+          char === '"'
+        ) {
+
+          insideQuotes =
+            !insideQuotes;
+
+        }
+
+        else if (
+          char === ','
+          &&
+          !insideQuotes
+        ) {
+
+          row.push(field);
+
+          field = '';
+
+        }
+
+        else if (
+          (
+            char === '\n'
+            ||
+            char === '\r'
+          )
+          &&
+          !insideQuotes
+        ) {
+
+          if (
+            char === '\r'
+            &&
+            next === '\n'
+          ) {
+
+            i++;
+
+          }
+
+
+          row.push(field);
+
+          rows.push(row);
+
+          row = [];
+
+          field = '';
+
+        }
+
+        else {
+
+          field += char;
+
+        }
+
       }
 
-      const description = document.createElement('div');
-      description.className = 'description';
-      description.textContent =
-        item.description || '';
 
-      const actions = document.createElement('div');
-      actions.className = 'actions';
+      if (
+        field.length
+        ||
+        row.length
+      ) {
 
-      if (item.exampleLink) {
-        const example = document.createElement('a');
-        example.className = 'button secondary';
-        example.href = item.exampleLink;
-        example.target = '_blank';
-        example.rel = 'noopener noreferrer';
-        example.textContent = 'View Example';
-        actions.appendChild(example);
+        row.push(field);
+
+        rows.push(row);
+
       }
 
-      const claim = document.createElement('a');
-      claim.className = 'button primary';
-      claim.href = buildPrefilledFormURL(item);
-      claim.target = '_blank';
-      claim.rel = 'noopener noreferrer';
-      claim.textContent = "I'll Provide This";
 
-      actions.appendChild(claim);
+      return rows;
 
-      card.appendChild(classroom);
-      card.appendChild(title);
-      card.appendChild(remaining);
-      card.appendChild(details);
-      card.appendChild(description);
-      card.appendChild(actions);
+    }
 
-      grid.appendChild(card);
-    });
-  }
 
-  function buildPrefilledFormURL(item) {
-    const params = new URLSearchParams();
 
-    params.set('usp', 'pp_url');
-    params.set(
-      `entry.${ITEM_ENTRY}`,
-      item.item
-    );
-    params.set(
-      `entry.${CLASSROOM_ENTRY}`,
-      item.classroom
-    );
+    /*
+      BUILD CLASSROOM FILTER BUTTONS
+    */
 
-    return `${FORM_BASE_URL}?${params.toString()}`;
-  }
-</script>
+    function buildFilters() {
+
+      const container =
+        document
+          .getElementById(
+            'filters'
+          );
+
+
+      const preferredOrder = [
+
+        'All',
+
+        'Whole School',
+
+        'Seedlings',
+
+        'Birch',
+
+        'Maple',
+
+        'Spruce'
+
+      ];
+
+
+      const existingClassrooms =
+        new Set(
+
+          allItems
+
+            .map(
+              item =>
+                item.classroom
+            )
+
+            .filter(Boolean)
+
+        );
+
+
+      const classrooms =
+        preferredOrder.filter(
+
+          classroom =>
+
+            classroom === 'All'
+
+            ||
+
+            existingClassrooms
+              .has(
+                classroom
+              )
+
+        );
+
+
+      Array
+        .from(
+          existingClassrooms
+        )
+
+        .filter(
+          classroom =>
+            !preferredOrder
+              .includes(
+                classroom
+              )
+        )
+
+        .sort()
+
+        .forEach(
+          classroom =>
+            classrooms
+              .push(
+                classroom
+              )
+        );
+
+
+      container.innerHTML =
+        '';
+
+
+      classrooms
+        .forEach(
+          classroom => {
+
+            const button =
+              document
+                .createElement(
+                  'button'
+                );
+
+
+            button.className =
+
+              'filter-btn'
+
+              +
+
+              (
+                classroom
+                === activeClassroom
+
+                ? ' active'
+
+                : ''
+              );
+
+
+            button.textContent =
+
+              classroom
+              === 'All'
+
+              ? 'All'
+
+              : classroom;
+
+
+            button.onclick =
+              () => {
+
+                activeClassroom =
+                  classroom;
+
+
+                buildFilters();
+
+                renderItems();
+
+              };
+
+
+            container
+              .appendChild(
+                button
+              );
+
+          }
+        );
+
+    }
+
+
+
+    /*
+      DISPLAY ITEM CARDS
+    */
+
+    function renderItems() {
+
+      const grid =
+        document
+          .getElementById(
+            'grid'
+          );
+
+
+      const empty =
+        document
+          .getElementById(
+            'empty'
+          );
+
+
+      const visibleItems =
+
+        activeClassroom
+        === 'All'
+
+        ? allItems
+
+        : allItems
+            .filter(
+
+              item =>
+                item.classroom
+                === activeClassroom
+
+            );
+
+
+      grid.innerHTML =
+        '';
+
+
+      if (
+        !visibleItems.length
+      ) {
+
+        empty.style.display =
+          'block';
+
+        return;
+
+      }
+
+
+      empty.style.display =
+        'none';
+
+
+
+      visibleItems
+        .forEach(
+          item => {
+
+
+            /*
+              CARD
+            */
+
+            const card =
+              document
+                .createElement(
+                  'article'
+                );
+
+
+            card.className =
+              'card';
+
+
+
+            /*
+              LABEL ROW
+            */
+
+            const labels =
+              document
+                .createElement(
+                  'div'
+                );
+
+
+            labels.className =
+              'card-labels';
+
+
+
+            /*
+              CLASSROOM LABEL
+            */
+
+            const classroom =
+              document
+                .createElement(
+                  'div'
+                );
+
+
+            classroom.className =
+              'classroom';
+
+
+            classroom.textContent =
+              item.classroom
+              || 'Whole School';
+
+
+            labels
+              .appendChild(
+                classroom
+              );
+
+
+
+            /*
+              HIGH PRIORITY LABEL
+            */
+
+            if (
+              item.priority
+              .toLowerCase()
+              === 'high'
+            ) {
+
+              const priorityBadge =
+                document
+                  .createElement(
+                    'div'
+                  );
+
+
+              priorityBadge.className =
+                'priority-badge';
+
+
+              priorityBadge.textContent =
+                'Most Needed';
+
+
+              labels
+                .appendChild(
+                  priorityBadge
+                );
+
+            }
+
+
+
+            /*
+              TITLE
+            */
+
+            const title =
+              document
+                .createElement(
+                  'h2'
+                );
+
+
+            title.textContent =
+              item.item;
+
+
+
+            /*
+              REMAINING QUANTITY
+            */
+
+            const remaining =
+              document
+                .createElement(
+                  'div'
+                );
+
+
+            remaining.className =
+              'remaining';
+
+
+            if (
+              item.stillNeeded
+              === 1
+            ) {
+
+              remaining
+                .classList
+                .add(
+                  'one-left'
+                );
+
+
+              remaining.textContent =
+                'Just 1 still needed!';
+
+            }
+
+            else {
+
+              remaining.textContent =
+                `${item.stillNeeded} still needed`;
+
+            }
+
+
+
+            /*
+              CONDITION
+            */
+
+            const condition =
+              document
+                .createElement(
+                  'div'
+                );
+
+
+            condition.className =
+              'condition';
+
+
+            if (
+              item.condition
+            ) {
+
+              const label =
+                document
+                  .createElement(
+                    'span'
+                  );
+
+
+              label.className =
+                'condition-label';
+
+
+              label.textContent =
+                'Condition: ';
+
+
+
+              const value =
+                document
+                  .createElement(
+                    'span'
+                  );
+
+
+              value.className =
+                'condition-value';
+
+
+              value.textContent =
+                item.condition;
+
+
+              condition
+                .appendChild(
+                  label
+                );
+
+
+              condition
+                .appendChild(
+                  value
+                );
+
+            }
+
+
+
+            /*
+              DESCRIPTION
+            */
+
+            const description =
+              document
+                .createElement(
+                  'div'
+                );
+
+
+            description.className =
+              'description';
+
+
+            description.textContent =
+              item.description
+              || '';
+
+
+
+            /*
+              BUTTON AREA
+            */
+
+            const actions =
+              document
+                .createElement(
+                  'div'
+                );
+
+
+            actions.className =
+              'actions';
+
+
+
+            /*
+              EXAMPLE LINK
+            */
+
+            if (
+              item.exampleLink
+            ) {
+
+              const example =
+                document
+                  .createElement(
+                    'a'
+                  );
+
+
+              example.className =
+                'button secondary';
+
+
+              example.href =
+                item.exampleLink;
+
+
+              example.target =
+                '_blank';
+
+
+              example.rel =
+                'noopener noreferrer';
+
+
+              example.textContent =
+                'View Example';
+
+
+              actions
+                .appendChild(
+                  example
+                );
+
+            }
+
+
+
+            /*
+              CLAIM BUTTON
+            */
+
+            const claim =
+              document
+                .createElement(
+                  'a'
+                );
+
+
+            claim.className =
+              'button primary';
+
+
+            claim.href =
+              buildPrefilledFormURL(
+                item
+              );
+
+
+            claim.target =
+              '_blank';
+
+
+            claim.rel =
+              'noopener noreferrer';
+
+
+            claim.textContent =
+              "I'll Provide This";
+
+
+            actions
+              .appendChild(
+                claim
+              );
+
+
+
+            /*
+              ASSEMBLE CARD
+            */
+
+            card
+              .appendChild(
+                labels
+              );
+
+
+            card
+              .appendChild(
+                title
+              );
+
+
+            card
+              .appendChild(
+                remaining
+              );
+
+
+            if (
+              item.condition
+            ) {
+
+              card
+                .appendChild(
+                  condition
+                );
+
+            }
+
+
+            card
+              .appendChild(
+                description
+              );
+
+
+            card
+              .appendChild(
+                actions
+              );
+
+
+            grid
+              .appendChild(
+                card
+              );
+
+          }
+        );
+
+    }
+
+
+
+    /*
+      BUILD PREFILLED GOOGLE FORM LINK
+    */
+
+    function buildPrefilledFormURL(
+      item
+    ) {
+
+      const params =
+        new URLSearchParams();
+
+
+      params.set(
+        'usp',
+        'pp_url'
+      );
+
+
+      params.set(
+        `entry.${ITEM_ENTRY}`,
+        item.item
+      );
+
+
+      params.set(
+        `entry.${CLASSROOM_ENTRY}`,
+        item.classroom
+      );
+
+
+      return (
+        `${FORM_BASE_URL}?`
+        +
+        params.toString()
+      );
+
+    }
+
+  </script>
+
 
 </body>
+
 </html>
