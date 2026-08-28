@@ -18,10 +18,6 @@
 
   <style>
 
-    /* =========================================
-       COLORS
-    ========================================= */
-
     :root {
       --green: #3f5d46;
       --dark-green: #2f4836;
@@ -87,7 +83,7 @@
       background: var(--green);
       color: var(--white);
 
-      padding: 42px 28px;
+      padding: 34px 28px;
     }
 
 
@@ -98,12 +94,12 @@
       display: flex;
       align-items: center;
 
-      gap: 42px;
+      gap: 35px;
     }
 
 
     .logo-wrap {
-      flex: 0 0 220px;
+      flex: 0 0 180px;
 
       display: flex;
       justify-content: center;
@@ -112,16 +108,11 @@
 
 
     .logo {
-      width: 210px;
-      height: 210px;
+      width: 175px;
+      height: 175px;
 
       object-fit: contain;
 
-      /*
-        Your uploaded logo has white artwork on black.
-        Screen blending visually removes the black
-        against the green header.
-      */
       mix-blend-mode: screen;
     }
 
@@ -132,11 +123,11 @@
 
 
     .hero h1 {
-      margin: 0 0 14px;
+      margin: 0 0 8px;
 
       color: var(--white);
 
-      font-size: clamp(38px, 5vw, 64px);
+      font-size: clamp(38px, 5vw, 62px);
 
       line-height: 1.05;
 
@@ -144,16 +135,14 @@
     }
 
 
-    .hero p {
+    .school-name {
       margin: 0;
 
-      max-width: 780px;
+      color: rgba(255, 255, 255, 0.92);
 
-      color: rgba(255, 255, 255, 0.94);
+      font-size: clamp(17px, 2vw, 22px);
 
-      font-size: clamp(16px, 2vw, 20px);
-
-      line-height: 1.6;
+      font-weight: 600;
     }
 
 
@@ -167,7 +156,7 @@
 
       margin: 0 auto;
 
-      padding: 38px 0 65px;
+      padding: 35px 0 65px;
     }
 
 
@@ -183,14 +172,14 @@
 
       border-radius: 17px;
 
-      padding: 22px 25px;
+      padding: 24px 26px;
 
-      margin-bottom: 34px;
+      margin-bottom: 38px;
 
       box-shadow: var(--shadow);
 
       display: flex;
-      align-items: center;
+      align-items: flex-start;
 
       gap: 18px;
     }
@@ -210,24 +199,52 @@
 
       background: var(--light-sage);
 
-      color: var(--dark-green);
-
-      font-size: 28px;
-      line-height: 1;
+      font-size: 27px;
     }
 
 
-    .how-it-works p {
-      margin: 0;
+    .how-content {
+      flex: 1;
+    }
+
+
+    .how-content h2 {
+      margin: 0 0 8px;
+
+      color: var(--dark-green);
+
+      font-size: 22px;
+    }
+
+
+    .how-content p {
+      margin: 0 0 12px;
 
       color: var(--text);
 
-      font-size: 16px;
+      font-size: 15px;
     }
 
 
-    .how-it-works strong {
+    .how-content p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .steps {
+      margin: 15px 0;
+
+      padding: 13px 16px;
+
+      background: var(--light-sage);
+
+      border-radius: 10px;
+
       color: var(--dark-green);
+
+      font-weight: 700;
+
+      font-size: 15px;
     }
 
 
@@ -402,6 +419,7 @@
       padding: 5px 10px;
 
       font-size: 12px;
+
       font-weight: 700;
     }
 
@@ -418,6 +436,7 @@
       padding: 5px 10px;
 
       font-size: 12px;
+
       font-weight: 700;
     }
 
@@ -567,7 +586,7 @@
     .error {
       text-align: center;
 
-      padding: 50px 20px;
+      padding: 45px 20px;
 
       color: var(--muted);
     }
@@ -577,6 +596,15 @@
       background: var(--white);
 
       border: 1px solid var(--border);
+
+      border-radius: 16px;
+    }
+
+
+    .error {
+      background: #fff8f5;
+
+      border: 1px solid #ead8cf;
 
       border-radius: 16px;
     }
@@ -621,13 +649,13 @@
 
 
       .logo-wrap {
-        flex-basis: 175px;
+        flex-basis: 150px;
       }
 
 
       .logo {
-        width: 170px;
-        height: 170px;
+        width: 145px;
+        height: 145px;
       }
 
     }
@@ -641,39 +669,37 @@
     @media (max-width: 650px) {
 
       .hero {
-        padding: 30px 20px;
+        padding: 28px 20px;
       }
 
 
       .hero-inner {
-        flex-direction: column;
+        flex-direction: row;
 
-        align-items: flex-start;
+        align-items: center;
 
-        gap: 19px;
+        gap: 18px;
       }
 
 
       .logo-wrap {
-        flex: none;
-
-        justify-content: flex-start;
+        flex: 0 0 95px;
       }
 
 
       .logo {
-        width: 135px;
-        height: 135px;
+        width: 95px;
+        height: 95px;
       }
 
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 34px;
       }
 
 
-      .hero p {
-        font-size: 16px;
+      .school-name {
+        font-size: 15px;
       }
 
 
@@ -685,9 +711,7 @@
 
 
       .how-it-works {
-        padding: 17px;
-
-        align-items: flex-start;
+        padding: 18px;
 
         gap: 12px;
       }
@@ -697,7 +721,14 @@
         width: 42px;
         height: 42px;
 
-        font-size: 23px;
+        font-size: 22px;
+      }
+
+
+      .steps {
+        font-size: 14px;
+
+        line-height: 1.6;
       }
 
 
@@ -739,7 +770,7 @@
 
 
   <!-- ========================================
-       GREEN HEADER
+       HEADER
   ========================================= -->
 
   <header class="hero">
@@ -762,26 +793,15 @@
         <h1>
           Community Wish List
         </h1>
-        
-        <h2>
+
+        <p class="school-name">
           Pine Grove Montessori School
-        </h2>
-<p>
-        <h3>How It Works ❤️</h3>
-       </p>
-      <br>
-<p>Browse the items below and select <strong>“I’ll Provide This”</strong> for anything you’d like to contribute.
-</p>
-      <br>
-<p><strong>1. Find an item → 2. Sign up → 3. Check your email → 4. Bring it or ship it to school</strong></p>
-<br>
-<p>After signing up, you’ll receive a confirmation email with the item details, quantity, condition, and 
-  example link (if available), so you’ll have everything you need when you’re ready to shop or donate.</p>
-      <br>
-<p>Items may be purchased from any store, and items marked “New or Used” are welcome to be secondhand as 
-  long as they are clean and in good condition. The wish list updates as items are claimed, so you can 
-  see what our classrooms still need.</p>
-       
+        </p>
+
+      </div>
+
+    </div>
+
   </header>
 
 
@@ -793,6 +813,57 @@
   <main class="container">
 
 
+    <!-- HOW IT WORKS -->
+
+    <section class="how-it-works">
+
+      <div class="how-icon">
+        ❤️
+      </div>
+
+
+      <div class="how-content">
+
+        <h2>
+          How It Works
+        </h2>
+
+        <p>
+          Browse the items below and select
+          <strong>I'll Provide This</strong>
+          for anything you'd like to contribute.
+        </p>
+
+
+        <div class="steps">
+          1. Find an item →
+          2. Sign up →
+          3. Check your email →
+          4. Bring it or ship it to school
+        </div>
+
+
+        <p>
+          After signing up, you'll receive a confirmation email
+          with the item details, quantity, condition, and example
+          link (if available), so you'll have everything you need
+          when you're ready to shop or donate.
+        </p>
+
+
+        <p>
+          Items may be purchased from <strong>any store</strong>.
+          Items marked <strong>New or Used</strong> are welcome to
+          be secondhand as long as they are clean and in good
+          condition.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
     <!-- CURRENT NEEDS -->
 
     <div class="browse-heading">
@@ -802,14 +873,14 @@
       </h2>
 
       <p>
-        Browse everything or select a classroom.
+        Browse everything below or select a classroom.
       </p>
 
     </div>
 
 
 
-    <!-- FILTER BUTTONS -->
+    <!-- CLASSROOM FILTERS -->
 
     <div
       id="filters"
@@ -851,7 +922,7 @@
 
 
 
-    <!-- EMPTY FILTER -->
+    <!-- EMPTY -->
 
     <div
       id="empty"
@@ -886,7 +957,7 @@
 
 
   <!-- ========================================
-       WORKING WISH LIST JAVASCRIPT
+       WISH LIST JAVASCRIPT
   ========================================= -->
 
   <script>
@@ -959,11 +1030,9 @@
 
 
         if (!response.ok) {
-
           throw new Error(
             'CSV request failed'
           );
-
         }
 
 
@@ -981,6 +1050,12 @@
           'none';
 
 
+        document
+          .getElementById('error')
+          .style.display =
+          'none';
+
+
         buildFilters();
 
         renderItems();
@@ -993,6 +1068,12 @@
 
         document
           .getElementById('loading')
+          .style.display =
+          'none';
+
+
+        document
+          .getElementById('empty')
           .style.display =
           'none';
 
@@ -1019,9 +1100,7 @@
 
 
       if (rows.length < 2) {
-
         return [];
-
       }
 
 
@@ -1041,34 +1120,26 @@
       const itemIndex =
         getIndex('Item');
 
-
       const classroomIndex =
         getIndex('Classroom');
-
 
       const neededIndex =
         getIndex('Quantity Needed');
 
-
       const claimedIndex =
         getIndex('Quantity Claimed');
-
 
       const remainingIndex =
         getIndex('Still Needed');
 
-
       const conditionIndex =
         getIndex('Condition');
-
 
       const priorityIndex =
         getIndex('Priority');
 
-
       const descriptionIndex =
         getIndex('Description');
-
 
       const exampleLinkIndex =
         getIndex('Example Link');
@@ -1086,12 +1157,10 @@
                 ?.trim()
               || '',
 
-
             classroom:
               row[classroomIndex]
                 ?.trim()
               || '',
-
 
             quantityNeeded:
               Number(
@@ -1099,13 +1168,11 @@
               )
               || 0,
 
-
             quantityClaimed:
               Number(
                 row[claimedIndex]
               )
               || 0,
-
 
             stillNeeded:
               Number(
@@ -1113,24 +1180,20 @@
               )
               || 0,
 
-
             condition:
               row[conditionIndex]
                 ?.trim()
               || '',
-
 
             priority:
               row[priorityIndex]
                 ?.trim()
               || '',
 
-
             description:
               row[descriptionIndex]
                 ?.trim()
               || '',
-
 
             exampleLink:
               row[exampleLinkIndex]
@@ -1141,8 +1204,7 @@
         )
 
         /*
-          Automatically hide anything
-          that has been fully claimed.
+          Hide fully claimed items.
         */
 
         .filter(
@@ -1180,7 +1242,6 @@
         const char =
           text[i];
 
-
         const next =
           text[i + 1];
 
@@ -1199,6 +1260,7 @@
 
         }
 
+
         else if (
           char === '"'
         ) {
@@ -1207,6 +1269,7 @@
             !insideQuotes;
 
         }
+
 
         else if (
           char === ','
@@ -1219,6 +1282,7 @@
           field = '';
 
         }
+
 
         else if (
           (
@@ -1250,6 +1314,7 @@
           field = '';
 
         }
+
 
         else {
 
@@ -1342,8 +1407,7 @@
 
 
       /*
-        Include any future classrooms
-        not listed above.
+        Include any future classrooms.
       */
 
       Array
@@ -1377,7 +1441,6 @@
         .forEach(
           classroom => {
 
-
             const button =
               document
                 .createElement(
@@ -1402,18 +1465,11 @@
 
 
             button.textContent =
-
-              classroom
-              === 'All'
-
-              ? 'All'
-
-              : classroom;
+              classroom;
 
 
             button.onclick =
               () => {
-
 
                 activeClassroom =
                   classroom;
@@ -1495,7 +1551,6 @@
         'none';
 
 
-
       visibleItems
         .forEach(
           item => {
@@ -1562,12 +1617,11 @@
 
             /*
               MOST NEEDED BADGE
-              Only shown for HIGH priority.
             */
 
             if (
               item.priority
-              .toLowerCase()
+                .toLowerCase()
               === 'high'
             ) {
 
